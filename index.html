@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerador de senha</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -17,13 +18,13 @@
         <div class="container-input">
             <span class="text-info-password">Gerar senha de <span id="size-password">15</span> caracteres</span>
             <div class="container-input-wrap">
-                <input type="range" class="input" id="input" min="8" max="25">
-                <button class="button-generate-password">Gerar senha</button>
+                <input type="range" class="input" id="slider-input" min="5" max="25" value="15">
+                <button onclick="generatePassword()" class="button-generate-password">Gerar senha</button>
             </div>
         </div>
         <div class="container-output">
-            <span class="output-password">Aqui sairá a senha</span>
-            <span class="copy-password">Click para copiar a senha 👆</span>
+            <span class="output-password" id="output-password">Senha</span>
+            <span class="copy-password" id="copy-password" onclick="copiedSuccessfully()"></span>
         </div>
     </div>
 </body>
